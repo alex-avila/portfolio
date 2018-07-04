@@ -17,6 +17,14 @@ Vue.component('intro', {
     `
 })
 
+Vue.component('projects', {
+    template: `
+        <div class="utility-wrapper">
+            <h3>Projects</h3>
+        </div>
+    `
+})
+
 new Vue({
     el: '#app'
 })
