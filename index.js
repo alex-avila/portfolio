@@ -1,11 +1,22 @@
+Vue.component('intro', {
+    template: `
+        <div class="intro utility-wrapper">
+            <div class="intro__background"></div>
+            <div class="intro__nav">
+                <span>Alex Avila</span>
+                <span>Menu</span>
+            </div>
+            <div class="intro__headline">
+                <h1>I'm a full stack developer with an affinity for design.</h1>
+            </div>
+            <div class="intro__skills">
+                <h3>Main Skills</h3>
+                <p>React, Redux, ES6, MongoDB, Express, Node JS, Vue, React Native</p>
+            </div>
+        </div>
+    `
+})
+
 new Vue({
-    el: '#hello',
-    data: {
-        display: 'Hello'
-    },
-    methods: {
-        changeTitle: function(e) {
-            this.display = e.target.value
-        }
-    }
+    el: '#app'
 })
