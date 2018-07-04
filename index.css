@@ -9,8 +9,18 @@ body,
     font-size: 16px;
     font-family: 'Avenir';
     height: 100%;
-    color: black;
+    background: #FCFDFF;
+    color: #24195F;
     line-height: 1.5;
+}
+
+h4 {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 26px;
 }
 
 .utility-wrapper {
@@ -20,10 +30,14 @@ body,
 }
 
 .intro {
+    position: relative;
     height: 100vh;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #F8EAFF;
+    margin-bottom: 3em;
+    z-index: 0;
 }
 
 .intro__background {
@@ -48,12 +62,98 @@ body,
     font-weight: 600;
 }
 
+.intro__nav__logo {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.intro__nav__menu {
+    background: url(./assets//menu-icon.svg);
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
 .intro__headline {
     text-align: center;
     margin: auto;
-    line-height: 2;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.8;
 }
 
 .intro__skills {
-    padding: 0 0 25%;
+    padding: 0 0 60px;
+}
+
+.intro__scroll-btn {
+    background: url(./assets/down-arrow.svg);
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    align-self: center;
+    padding-bottom: 60px;
+}
+
+.section-title {
+    color: #202ED5;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    background: #FDCEFF;
+    height: 7px;
+    width: 66px;
+    margin: -15px 0 0 -1px;
+}
+
+.connect {
+    padding-bottom: 3em;
+}
+
+.connect__content {
+    text-align: center;
+    padding: 1em 0 1.618em;
+}
+
+.connect__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em 0 0;
+}
+
+.github {
+    background: url(./assets/github.svg)
+}
+
+.dribbble {
+    background: url(./assets/dribbble.svg)
+}
+
+.linkedin {
+    background: url(./assets/linkedin.svg)
+}
+
+.icon {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 3em 0;
+    font-size: 14px;
 }
