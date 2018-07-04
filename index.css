@@ -6,21 +6,21 @@ html,
 body,
 .wrapper {
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Avenir';
     height: 100%;
     background: #FCFDFF;
     color: #24195F;
-    line-height: 1.5;
+    line-height: 1.618;
 }
 
 h4 {
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 500;
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 30px;
 }
 
 .utility-wrapper {
@@ -63,7 +63,7 @@ h3 {
 }
 
 .intro__nav__logo {
-    font-size: 18px;
+    font-size: 21px;
     cursor: pointer;
 }
 
@@ -116,18 +116,23 @@ h3 {
 
 .connect {
     padding-bottom: 3em;
+    line-height: 2;
 }
 
 .connect__content {
     text-align: center;
-    padding: 1em 0 1.618em;
+    padding: 1.618em 0 1.618em;
+}
+
+.connect__content p:first-child {
+    padding: 0.618em;
 }
 
 .connect__icons {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 1em 0 0;
+    padding: 3em 0;
 }
 
 .github {
@@ -154,6 +159,6 @@ h3 {
 .footer {
     display: flex;
     justify-content: center;
-    padding: 3em 0;
-    font-size: 14px;
+    padding: 0 0 3em;
+    font-size: 15px;
 }
