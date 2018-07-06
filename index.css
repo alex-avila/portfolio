@@ -119,6 +119,10 @@ h3 {
     line-height: 2;
 }
 
+.connect__title {
+    line-height: 1.618
+}
+
 .connect__content {
     text-align: center;
     padding: 1.618em 0 1.618em;
