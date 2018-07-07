@@ -113,15 +113,15 @@ h3 {
 }
 
 .github {
-    /* background: url(./assets/github.svg) */
+    background: url(./assets/github.svg)
 }
 
 .dribbble {
-    /* background: url(./assets/dribbble.svg) */
+    background: url(./assets/dribbble.svg)
 }
 
 .linkedin {
-    /* background: url(./assets/linkedin.svg) */
+    background: url(./assets/linkedin.svg)
 }
 
 .icon {

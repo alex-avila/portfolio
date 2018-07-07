@@ -35,7 +35,7 @@ export default {
 }
 
 .intro__background {
-  background: url(../assets/main.png);
+  background: url(../assets/main-background.svg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -62,7 +62,7 @@ export default {
 }
 
 .intro__nav__menu {
-  /* background: url(./assets/menu-icon.svg); */
+  background: url(../assets/menu-icon.svg);
   display: block;
   width: 25px;
   height: 25px;
@@ -84,7 +84,7 @@ export default {
 }
 
 .intro__scroll-btn {
-  /* background: url(./assets/down-arrow.svg); */
+  background: url(../assets/down-arrow.svg);
   display: block;
   width: 25px;
   height: 25px;
