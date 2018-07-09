@@ -58,7 +58,7 @@ html,
 body,
 .wrapper {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Avenir";
   height: 100%;
   background: #fcfdff;
@@ -67,12 +67,12 @@ body,
 }
 
 h4 {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 500;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 26px;
 }
 
 .section-title {
@@ -138,6 +138,6 @@ h3 {
   display: flex;
   justify-content: center;
   padding: 0 0 3em;
-  font-size: 15px;
+  font-size: 13px;
 }
 </style>
