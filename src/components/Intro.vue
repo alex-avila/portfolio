@@ -14,7 +14,7 @@
             </div>
             <div
               class="intro__scroll-btn"
-              v-on:click="scrollDown()"
+              v-on:click="scrollDown(250)"
             ></div>
         </div>
 </template>
@@ -23,12 +23,24 @@
 export default {
   name: "Intro",
   methods: {
-    scrollDown: function() {
-      window.scrollTo({
-        behavior: "smooth",
-        left: 0,
-        top: document.getElementById('intro').offsetHeight
-      })
+    // 60 fps scrolldown function
+    scrollDown: function(duration = 200) {
+      const scrollDest = document.getElementById("intro").offsetHeight;
+      const heightToScroll = scrollDest - window.pageYOffset;
+      // this handles how much to scroll per frame depending on the duration
+      const i = heightToScroll / duration;
+      console.log(i);
+      let x = i;
+      const int = setInterval(() => {
+        const screenBottom = window.pageYOffset + window.innerHeight;
+        const screenHeight = document.body.scrollHeight;
+        window.scrollTo(0, x + window.pageYOffset);
+        if (window.pageYOffset >= scrollDest || screenHeight === screenBottom) {
+          clearInterval(int);
+        }
+        x += i;
+        // This is 60 frames per second because 1000 / 60 = 16.666...
+      }, 16.7);
     }
   }
 };
