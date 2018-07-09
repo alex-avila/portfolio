@@ -29,7 +29,6 @@ export default {
       const heightToScroll = scrollDest - window.pageYOffset;
       // this handles how much to scroll per frame depending on the duration
       const i = heightToScroll / duration;
-      console.log(i);
       let x = i;
       const int = setInterval(() => {
         const screenBottom = window.pageYOffset + window.innerHeight;
