@@ -1,18 +1,20 @@
 <template>
     <div class="projects utility-wrapper">
         <h3 class="section-title projects__title">Projects</h3>
-        <Project
-            :image="require('../assets/tic-tac-toe.jpg')"
-            link="https://alex-avila.github.io/tic-tac-toe-world/#/"
-            title="Tic Tac Toe World"
-            description="Features artificial intelligence to create an unbeatable tic tac toe game. Displays weather information in two graphs from the dark sky API"
-        />
-        <Project
-            :image="require('../assets/memory-game.jpg')"
-            link="https://alex-avila.github.io/memory-game/"
-            title="RPG Memory Game"
-            description="Simple game of concentration in React."
-        />
+        <div class="projects__projects">
+            <Project
+                :image="require('../assets/tic-tac-toe.jpg')"
+                link="https://alex-avila.github.io/tic-tac-toe-world/#/"
+                title="Tic Tac Toe World"
+                description="A.I. that creates an unbeatable tic tac toe game. Displays weather information from an API."
+            />
+            <Project
+                :image="require('../assets/memory-game.jpg')"
+                link="https://alex-avila.github.io/memory-game/"
+                title="RPG Memory Game"
+                description="Simple game of concentration in React."
+            />
+        </div>
     </div>
 </template>
 
@@ -22,7 +24,15 @@ import Project from './Project.vue'
 export default {
   name: "Projects",
   components: {
-      Project
+    Project
   }
 };
 </script>
+
+<style lang="sass">
+.projects__projects
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+</style>
+

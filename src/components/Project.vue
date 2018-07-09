@@ -26,6 +26,7 @@ export default {
   font-size: 21px;
   color: #256df7;
   font-weight: 600;
+  padding: 0 0 0.25em;
 }
 
 .project__link {
