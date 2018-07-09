@@ -1,5 +1,5 @@
 <template>
-    <div class="intro utility-wrapper">
+    <div id="intro" class="intro utility-wrapper">
             <div class="intro__background"></div>
             <div class="intro__nav">
                 <span class="intro__nav__logo">Alex Avila</span>
@@ -12,13 +12,25 @@
                 <h4>Main Skills</h4>
                 <p>React, Redux, ES6, MongoDB, Express, Node JS, Vue, React Native</p>
             </div>
-            <div class="intro__scroll-btn"></div>
+            <div
+              class="intro__scroll-btn"
+              v-on:click="scrollDown()"
+            ></div>
         </div>
 </template>
 
 <script>
 export default {
-  name: "Intro"
+  name: "Intro",
+  methods: {
+    scrollDown: function() {
+      window.scrollTo({
+        behavior: "smooth",
+        left: 0,
+        top: document.getElementById('intro').offsetHeight
+      })
+    }
+  }
 };
 </script>
 

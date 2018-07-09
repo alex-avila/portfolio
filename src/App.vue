@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import Intro from "./components/Intro.vue";
 import Projects from "./components/Projects.vue";
 import Connect from "./components/Connect.vue";
@@ -17,7 +16,6 @@ import Footer from "./components/Footer.vue";
 export default {
   name: "app",
   components: {
-    HelloWorld,
     Intro,
     Projects,
     Connect,
