@@ -1,7 +1,7 @@
 <template>
     <div id="project">
         <a :href="link" target="_blank" class="project__link">
-            <div class="project__img" :style="style"></div>
+            <img class="project__img" :src="image" :alt="title">
             <div class="project__title">{{ title }}</div>
         </a>
         <div>{{ description }}</div>
@@ -41,7 +41,6 @@ export default {
 .project__img {
   background-size: cover;
   background-position: center;
-  height: 200px;
   width: 100%;
   box-shadow: 0 5px rgba(82, 47, 236, 0.55);
   margin: 1.618em 0 1em;
