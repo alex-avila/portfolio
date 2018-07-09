@@ -33,7 +33,11 @@ export default {
       const int = setInterval(() => {
         const screenBottom = window.pageYOffset + window.innerHeight;
         const screenHeight = document.body.scrollHeight;
-        window.scrollTo(0, x + window.pageYOffset);
+        const scrollToNum =
+          x + window.pageYOffset > scrollDest
+            ? scrollDest
+            : x + window.pageYOffset;
+        window.scrollTo(0, scrollToNum);
         if (window.pageYOffset >= scrollDest || screenHeight === screenBottom) {
           clearInterval(int);
         }
