@@ -30,6 +30,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .utility-wrapper {
   padding: 0 1.618em;
   margin: auto;
