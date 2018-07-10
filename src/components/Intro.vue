@@ -82,7 +82,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  transform: scale(1.01);
   top: 0;
   right: 0;
   bottom: 0;
