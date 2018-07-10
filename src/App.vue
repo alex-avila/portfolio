@@ -93,7 +93,7 @@ a {
 .utility-wrapper {
   padding: 0 1.618em;
   margin: auto;
-  max-width: 1000px;
+  max-width: 900px;
 }
 
 #app {

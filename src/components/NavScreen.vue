@@ -22,6 +22,7 @@
         target="_blank"
         v-on:mouseover="styleHover"
         v-on:mouseleave="styleLeave"
+        v-if="isModeSmall"
       >
 				GitHub
 			</a>
@@ -31,6 +32,7 @@
         target="_blank"
         v-on:mouseover="styleHover"
         v-on:mouseleave="styleLeave"
+        v-if="isModeSmall"
       >
 				Dribbble
 			</a>
@@ -40,6 +42,7 @@
         target="_blank"
         v-on:mouseover="styleHover"
         v-on:mouseleave="styleLeave"
+        v-if="isModeSmall"
       >
 				LinkedIn
 			</a>
@@ -57,7 +60,8 @@ export default {
   props: {
     isActive: Boolean,
     hideNavScreen: Function,
-    scrollTo: Function
+    scrollTo: Function,
+    isModeSmall: Boolean
   },
   methods: {
     delayHideNavScreen: function(delay) {
@@ -65,7 +69,7 @@ export default {
     },
     style: function() {
       document.body.style.overflow = this.isActive ? "hidden" : "auto";
-      return this.isActive
+      return this.isActive || !this.isModeSmall
         ? {
             transform: "translateY(0)"
           }
@@ -74,13 +78,13 @@ export default {
           };
     },
     styleHover: function(e) {
-      e.target.style.transform = "scale(1.1)";
+      e.target.style.transform = "scale(1.05)";
       let elems = [
         ...document.getElementsByClassName("nav__screen__item")
       ].filter(elem => elem !== e.target);
       elems.forEach(elem => {
-        elem.style.color = 'rgba(248, 234, 255, 0.5)'
-      })
+        elem.style.color = "rgba(248, 234, 255, 0.5)";
+      });
     },
     styleLeave: function(e) {
       e.target.style.transform = "scale(1)";
@@ -88,8 +92,8 @@ export default {
         ...document.getElementsByClassName("nav__screen__item")
       ].filter(elem => elem !== e.target);
       elems.forEach(elem => {
-        elem.style.color = 'rgba(248, 234, 255, 1)'
-      })
+        elem.style.color = "rgba(248, 234, 255, 1)";
+      });
     }
   }
 };
@@ -119,6 +123,43 @@ export default {
   padding: 0 1em 1em;
   cursor: pointer;
   transition: all 0.25s;
+}
+
+@media screen and (min-width: 500px) {
+  .nav__screen {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 2;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    background: none;
+    z-index: 0;
+    transition: all 0.25s;
+    animation: fadeIn 1s cubic-bezier(1, 0.03, 1, 1);
+  }
+
+  .nav__screen__item {
+    padding: 0 2em;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .nav__screen__item:last-child {
+    padding: 0 0 0 2em;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 </style>
 

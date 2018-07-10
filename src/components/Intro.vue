@@ -2,18 +2,20 @@
     <div id="intro" class="intro__wrapper">
       <div class="intro__background"></div>
       <div class="utility-wrapper intro">
-        <NavScreen
-          :isActive="isNavScreenOn" 
-          :hideNavScreen="hideNavScreen"
-          :scrollTo="scrollTo"
-        />
         <div class="intro__nav">
             <span class="intro__nav__logo" v-on:click="scrollTo('', 250)">Alex Avila</span>
             <span
               :style="icon"
               class="intro__nav__menu"
               v-on:click="toggleNavScreen()"
+              v-if="isModeSmall"
             ></span>
+            <NavScreen
+          :isActive="isNavScreenOn" 
+          :hideNavScreen="hideNavScreen"
+          :scrollTo="scrollTo"
+          :isModeSmall="isModeSmall"
+        />
         </div>
         <div class="intro__headline">
             <span>I'm a full stack developer.</span>
@@ -42,7 +44,10 @@ export default {
     scrollTo: Function
   },
   data: function() {
-    return { isNavScreenOn: false };
+    return {
+      isNavScreenOn: false,
+      isModeSmall: true
+    };
   },
   computed: {
     icon() {
@@ -57,7 +62,25 @@ export default {
     },
     hideNavScreen: function() {
       this.isNavScreenOn = false;
+    },
+    toggleMode: function() {
+      if (window.innerWidth < 500) {
+        this.isModeSmall = true;
+      } else {
+        this.isModeSmall = false;
+      }
     }
+  },
+  created() {
+    if (window.innerWidth < 500) {
+      this.isModeSmall = true;
+    } else {
+      this.isModeSmall = false;
+    }
+    window.addEventListener("resize", this.toggleMode);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.toggleMode);
   }
 };
 </script>
