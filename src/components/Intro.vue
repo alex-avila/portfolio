@@ -1,31 +1,33 @@
 <template>
-    <div id="intro" class="intro utility-wrapper">
-            <div class="intro__background"></div>
-            <NavScreen
-              :isActive="isNavScreenOn" 
-              :hideNavScreen="hideNavScreen"
-              :scrollTo="scrollTo"
-            />
-            <div class="intro__nav">
-                <span class="intro__nav__logo" v-on:click="scrollTo('', 250)">Alex Avila</span>
-                <span
-                  :style="icon"
-                  class="intro__nav__menu"
-                  v-on:click="toggleNavScreen()"
-                ></span>
-            </div>
-            <div class="intro__headline">
-                <span>I'm a full stack developer.</span>
-            </div>
-            <div class="intro__skills">
-                <h4>Main Skills</h4>
-                <p>React, Redux, ES6, MongoDB, Express, Node JS, Vue, React Native</p>
-            </div>
-            <div
-              class="intro__scroll-btn"
-              v-on:click="scrollTo('projects', 250)"
-            ></div>
+    <div id="intro" class="intro__wrapper">
+      <div class="intro__background"></div>
+      <div class="utility-wrapper intro">
+        <NavScreen
+          :isActive="isNavScreenOn" 
+          :hideNavScreen="hideNavScreen"
+          :scrollTo="scrollTo"
+        />
+        <div class="intro__nav">
+            <span class="intro__nav__logo" v-on:click="scrollTo('', 250)">Alex Avila</span>
+            <span
+              :style="icon"
+              class="intro__nav__menu"
+              v-on:click="toggleNavScreen()"
+            ></span>
         </div>
+        <div class="intro__headline">
+            <span>I'm a full stack developer.</span>
+        </div>
+        <div class="intro__skills">
+            <h4>Main Skills</h4>
+            <p>React, Redux, ES6, MongoDB, Express, Node JS, Vue, React Native</p>
+        </div>
+        <div
+          class="intro__scroll-btn"
+          v-on:click="scrollTo('projects', 250)"
+        ></div>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -61,14 +63,18 @@ export default {
 </script>
 
 <style scoped>
-.intro {
+.intro__wrapper {
   position: relative;
-  height: 100vh;
   min-height: 600px;
+  height: 100vh;
+  z-index: 0;
+}
+
+.intro {
   display: flex;
   flex-direction: column;
+  height: 100%;
   color: #f8eaff;
-  z-index: 0;
 }
 
 .intro__background {
@@ -76,6 +82,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
+  transform: scale(1.01);
   top: 0;
   right: 0;
   bottom: 0;
@@ -132,6 +139,14 @@ export default {
   cursor: pointer;
   align-self: center;
   padding-bottom: 60px;
+}
+
+@media screen and (min-width: 500px) {
+  .intro__background {
+    background: url(../assets/large-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 </style>
 
