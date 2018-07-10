@@ -3,7 +3,7 @@
         <h3 class="section-title connect__title">Connect</h3>
         <div class="connect__content">
             <p>Thank you for visiting my portfolio.</p>
-            <p>You may contact me to discuss career opportunities (or anything really) at alex.avilx@gmail.com</p>
+            <p>Contact me at <a class="email-link" href="mailto:alex.avilx@gmail.com">alex.avilx@gmail.com</a>.</p>
         </div>
         <div class="connect__icons">
             <a href="https://github.com/alex-avila" target="_blank">
@@ -24,3 +24,18 @@ export default {
   name: "Connect"
 };
 </script>
+
+<style lang="scss" scoped>
+.email-link {
+    font-weight: 600;
+    color: #256df7;
+    background: #256ff71b;
+    border-radius: 5px;
+    padding: 0.2em 0.4em;
+    transition: all 0.1s;
+}
+
+.email-link:hover {
+    background: #256ff73b;
+}
+</style>
