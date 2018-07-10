@@ -37,6 +37,7 @@ export default {
 .nav
     position: fixed
     display: flex
+    flex-wrap: wrap
     align-items: center
     justify-content: center
     width: 100%
@@ -57,7 +58,9 @@ export default {
     cursor: pointer
 
 .menu-icon-wrapper
+    margin-top: 3px
     width: 25px;
+    cursor: pointer
 
 .cls-1
     fill: none;
