@@ -6,7 +6,7 @@
                 <span class="intro__nav__menu"></span>
             </div>
             <div class="intro__headline">
-                <span>I'm a full stack developer with an affinity for design.</span>
+                <span>I'm a full stack developer.</span>
             </div>
             <div class="intro__skills">
                 <h4>Main Skills</h4>

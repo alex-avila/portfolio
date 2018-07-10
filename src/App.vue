@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Nav :isNavOn="isNavOn" />
     <Intro />
     <Projects />
     <Connect />
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import Nav from './components/Nav.vue'
 import Intro from "./components/Intro.vue";
 import Projects from "./components/Projects.vue";
 import Connect from "./components/Connect.vue";
@@ -16,10 +18,28 @@ import Footer from "./components/Footer.vue";
 export default {
   name: "app",
   components: {
+    Nav,
     Intro,
     Projects,
     Connect,
     Footer
+  },
+  data: function () {
+    return {
+      isNavOn: false
+    }
+  },
+  methods: {
+    popNav: function () {
+      const scrollDest = document.getElementById("intro").offsetHeight
+      this.isNavOn = window.pageYOffset >= scrollDest
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.popNav)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.popNav)
   }
 };
 </script>
@@ -85,7 +105,7 @@ h3 {
   background: #fdceff;
   height: 7px;
   width: 66px;
-  margin: -15px 0 0 -1px;
+  margin: -16.75px 0 0 -1px;
 }
 
 .connect {
