@@ -57,7 +57,6 @@ export default {
   display: flex;
   flex-direction: column;
   color: #f8eaff;
-  margin-bottom: 3em;
   z-index: 0;
 }
 

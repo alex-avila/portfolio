@@ -1,5 +1,5 @@
 <template>
-    <div class="connect utility-wrapper">
+    <div id="connect" class="connect utility-wrapper">
         <h3 class="section-title connect__title">Connect</h3>
         <div class="connect__content">
             <p>Thank you for visiting my portfolio.</p>

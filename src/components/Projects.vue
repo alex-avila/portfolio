@@ -1,5 +1,5 @@
 <template>
-    <div class="utility-wrapper projects">
+    <div id="projects" class="utility-wrapper projects">
         <h3 class="section-title projects__title">Projects</h3>
         <div class="projects__projects">
             <Project
@@ -30,9 +30,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.projects
-    h3
-        padding-top: 1em;
+#projects
+    padding-top: 3em;
 
 .projects__projects
     display: grid;
