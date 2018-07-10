@@ -8,7 +8,11 @@
             />
             <div class="intro__nav">
                 <span class="intro__nav__logo">Alex Avila</span>
-                <span class="intro__nav__menu" v-on:click="toggleNavScreen()"></span>
+                <span
+                  :style="icon"
+                  class="intro__nav__menu"
+                  v-on:click="toggleNavScreen()"
+                ></span>
             </div>
             <div class="intro__headline">
                 <span>I'm a full stack developer.</span>
@@ -25,7 +29,7 @@
 </template>
 
 <script>
-import NavScreen from './NavScreen'
+import NavScreen from "./NavScreen";
 
 export default {
   name: "Intro",
@@ -38,12 +42,19 @@ export default {
   data: function() {
     return { isNavScreenOn: false };
   },
+  computed: {
+    icon() {
+      return this.isNavScreenOn
+        ? { background: `url(${require("../assets/ex.svg")})` }
+        : { background: `url(${require("../assets/menu-icon.svg")})` };
+    }
+  },
   methods: {
     toggleNavScreen: function() {
-      this.isNavScreenOn = !this.isNavScreenOn
+      this.isNavScreenOn = !this.isNavScreenOn;
     },
     hideNavScreen: function() {
-      this.isNavScreenOn = false
+      this.isNavScreenOn = false;
     }
   }
 };
@@ -90,12 +101,12 @@ export default {
 .intro__nav__menu {
   position: relative;
   z-index: 4;
-  background: url(../assets/menu-icon.svg);
+  /* background: url(../assets/menu-icon.svg); */
   display: block;
   width: 25px;
   height: 25px;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
   cursor: pointer;
 }
 
