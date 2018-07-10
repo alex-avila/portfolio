@@ -1,7 +1,9 @@
 <template>
     <div id="project">
         <a :href="link" target="_blank" class="project__link">
-            <img class="project__img" :src="image" :alt="title">
+            <div class="project__img__container">
+              <img class="project__img" :src="image" :alt="title">
+            </div>
             <div class="project__title">{{ title }}</div>
         </a>
         <div>{{ description }}</div>
@@ -34,17 +36,27 @@ export default {
 }
 
 .project__link:hover {
-    .project__img {
-        box-shadow: 0 5px rgba(82, 47, 236, 1);
-    }
+  .project__img__container {
+    box-shadow: 0 5px rgba(82, 47, 236, 1);
+  }
+  .project__img {
+    transform: scale(1.1);
+  }
 }
 
-.project__img {
+.project__img__container {
   background-size: cover;
   background-position: center;
   width: 100%;
   box-shadow: 0 5px rgba(82, 47, 236, 0.55);
   margin: 1.618em 0 1em;
+  transition: all 0.25s;
+  overflow: hidden;
+}
+
+.project__img {
+  display: block;
+  max-width: 100%;
   transition: all 0.25s;
 }
 </style>
