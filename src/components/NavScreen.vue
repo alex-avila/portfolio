@@ -1,24 +1,46 @@
 <template>
-    <div class="nav__menu" :style="style()">
+    <div class="nav__screen" :style="style()">
       <div 
-        class="nav__menu__item" 
+        class="nav__screen__item" 
         v-on:click="scrollTo('projects', delay, delayHideNavScreen(delay))"
+        v-on:mouseover="styleHover"
+        v-on:mouseleave="styleLeave"
       >
         Projects
       </div>
       <div 
-        class="nav__menu__item" 
+        class="nav__screen__item" 
         v-on:click="scrollTo('connect', delay, delayHideNavScreen(delay))"
+        v-on:mouseover="styleHover"
+        v-on:mouseleave="styleLeave"
       >
         Connect
       </div>
-      <a class="nav__menu__item" href="https://github.com/alex-avila" target="_blank">
+      <a
+        class="nav__screen__item"
+        href="https://github.com/alex-avila"
+        target="_blank"
+        v-on:mouseover="styleHover"
+        v-on:mouseleave="styleLeave"
+      >
 				GitHub
 			</a>
-			<a class="nav__menu__item" href="https://dribbble.com/Alex_Avila" target="_blank">
+			<a
+        class="nav__screen__item"
+        href="https://dribbble.com/Alex_Avila"
+        target="_blank"
+        v-on:mouseover="styleHover"
+        v-on:mouseleave="styleLeave"
+      >
 				Dribbble
 			</a>
-			<a class="nav__menu__item" href="https://www.linkedin.com/in/alex-avilx/" target="_blank">
+			<a
+        class="nav__screen__item"
+        href="https://www.linkedin.com/in/alex-avilx/"
+        target="_blank"
+        v-on:mouseover="styleHover"
+        v-on:mouseleave="styleLeave"
+      >
 				LinkedIn
 			</a>
     </div>
@@ -50,6 +72,24 @@ export default {
         : {
             transform: "translateY(-100%)"
           };
+    },
+    styleHover: function(e) {
+      e.target.style.transform = "scale(1.1)";
+      let elems = [
+        ...document.getElementsByClassName("nav__screen__item")
+      ].filter(elem => elem !== e.target);
+      elems.forEach(elem => {
+        elem.style.color = 'rgba(248, 234, 255, 0.5)'
+      })
+    },
+    styleLeave: function(e) {
+      e.target.style.transform = "scale(1)";
+      let elems = [
+        ...document.getElementsByClassName("nav__screen__item")
+      ].filter(elem => elem !== e.target);
+      elems.forEach(elem => {
+        elem.style.color = 'rgba(248, 234, 255, 1)'
+      })
     }
   }
 };
@@ -57,7 +97,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.nav__menu {
+.nav__screen {
   position: fixed;
   font-size: 26px;
   font-weight: 600;
@@ -75,9 +115,10 @@ export default {
   transition: all 0.25s;
 }
 
-.nav__menu__item {
+.nav__screen__item {
   padding: 0 1em 1em;
   cursor: pointer;
+  transition: all 0.25s;
 }
 </style>
 
