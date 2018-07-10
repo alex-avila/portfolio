@@ -1,5 +1,5 @@
 <template>
-    <div class="nav__menu" :style="style">
+    <div class="nav__menu" :style="style()">
       <div 
         class="nav__menu__item" 
         v-on:click="scrollTo('projects', delay, delayHideNavScreen(delay))"
@@ -30,15 +30,19 @@ export default {
   data: function() {
     return {
       delay: 250
-    }
+    };
   },
   props: {
     isActive: Boolean,
-		hideNavScreen: Function,
-		scrollTo: Function
+    hideNavScreen: Function,
+    scrollTo: Function
   },
-  computed: {
-    style() {
+  methods: {
+    delayHideNavScreen: function(delay) {
+      setTimeout(this.hideNavScreen, delay);
+    },
+    style: function() {
+      document.body.style.overflow = this.isActive ? "hidden" : "auto";
       return this.isActive
         ? {
             transform: "translateY(0)"
@@ -47,12 +51,7 @@ export default {
             transform: "translateY(-100%)"
           };
     }
-	},
-	methods: {
-		delayHideNavScreen: function (delay) {
-			setTimeout(this.hideNavScreen, delay)
-		}
-	}
+  }
 };
 </script>
 

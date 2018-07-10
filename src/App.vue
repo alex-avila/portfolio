@@ -36,7 +36,9 @@ export default {
     },
     scrollTo: function(destination, duration = 200, callback) {
       if (callback) callback();
-      const scrollDest = document.getElementById(destination).offsetTop;
+      const scrollDest = destination
+        ? document.getElementById(destination).offsetTop
+        : document.body.offsetTop;
       const heightToScroll = Math.abs(scrollDest - window.pageYOffset);
       const i = heightToScroll / duration;
       let x = i;

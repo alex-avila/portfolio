@@ -7,7 +7,7 @@
               :scrollTo="scrollTo"
             />
             <div class="intro__nav">
-                <span class="intro__nav__logo">Alex Avila</span>
+                <span class="intro__nav__logo" v-on:click="scrollTo('', 250)">Alex Avila</span>
                 <span
                   :style="icon"
                   class="intro__nav__menu"
