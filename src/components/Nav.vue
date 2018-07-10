@@ -20,6 +20,7 @@
 		<NavMenu
 			:isActive="isMenuActive"
 			:collapseMenu="collapseMenu"
+			:scrollTo="scrollTo"
 		/>
 	</div>
 </template>
@@ -38,7 +39,8 @@ export default {
     };
   },
   props: {
-    isNavOn: Boolean
+    isNavOn: Boolean,
+    scrollTo: Function
   },
   computed: {
     style() {

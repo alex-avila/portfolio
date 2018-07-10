@@ -1,8 +1,8 @@
 <template>
     <div class="nav__menu" :style="style">
-      <div class="nav__menu__item" v-on:click="scrollTo('', 250)">Top</div>
-      <div class="nav__menu__item" v-on:click="scrollTo('projects', 250)">Projects</div>
-      <div class="nav__menu__item" v-on:click="scrollTo('connect', 250)">Connect</div>
+      <div class="nav__menu__item" v-on:click="scrollTo('', 250, collapseMenu())">Top</div>
+      <div class="nav__menu__item" v-on:click="scrollTo('projects', 250, collapseMenu())">Projects</div>
+      <div class="nav__menu__item" v-on:click="scrollTo('connect', 250, collapseMenu())">Connect</div>
     </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
   name: "NavMenu",
   props: {
     isActive: Boolean,
-    collapseMenu: Function
+    collapseMenu: Function,
+    scrollTo: Function
   },
   computed: {
     style() {
@@ -22,43 +23,6 @@ export default {
         : {
             transform: "translateY(-100%)"
           };
-    }
-  },
-  methods: {
-    scrollTo: function(destination, duration = 200) {
-      this.collapseMenu()
-      const scrollDest = destination
-        ? document.getElementById(destination).offsetTop
-        : document.body.offsetTop;
-      const heightToScroll = Math.abs(scrollDest - window.pageYOffset);
-      const i = heightToScroll / duration;
-      let x = i;
-      const int = setInterval(() => {
-        const screenBottom = window.pageYOffset + window.innerHeight;
-        const screenHeight = document.body.scrollHeight;
-        const scrollToNum =
-          window.pageYOffset < scrollDest
-            ? x + window.pageYOffset > scrollDest
-              ? scrollDest
-              : x + window.pageYOffset
-            : window.pageYOffset - x < scrollDest
-              ? scrollDest
-              : window.pageYOffset - x;
-        window.scrollTo(0, scrollToNum);
-        if (window.pageYOffset < scrollDest) {
-          if (
-            window.pageYOffset >= scrollDest ||
-            screenHeight === screenBottom
-          ) {
-            clearInterval(int);
-          }
-        } else {
-          if (window.pageYOffset <= scrollDest || window.pageYOffset === 0) {
-            clearInterval(int);
-          }
-        }
-        x += i;
-      }, 16.7);
     }
   }
 };

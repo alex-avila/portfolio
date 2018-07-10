@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Nav :isNavOn="isNavOn" />
-    <Intro />
+    <Nav :isNavOn="isNavOn" :scrollTo="scrollTo"/>
+    <Intro :scrollTo="scrollTo"/>
     <Projects />
     <Connect />
     <Footer />
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Nav from './components/Nav.vue'
+import Nav from "./components/Nav.vue";
 import Intro from "./components/Intro.vue";
 import Projects from "./components/Projects.vue";
 import Connect from "./components/Connect.vue";
@@ -24,22 +24,55 @@ export default {
     Connect,
     Footer
   },
-  data: function () {
+  data: function() {
     return {
       isNavOn: false
-    }
+    };
   },
   methods: {
-    popNav: function () {
-      const scrollDest = document.getElementById("intro").offsetHeight
-      this.isNavOn = window.pageYOffset >= scrollDest
+    popNav: function() {
+      const scrollDest = document.getElementById("intro").offsetHeight;
+      this.isNavOn = window.pageYOffset >= scrollDest;
+    },
+    scrollTo: function(destination, duration = 200, callback) {
+      if (callback) callback();
+      const scrollDest = document.getElementById(destination).offsetTop;
+      const heightToScroll = Math.abs(scrollDest - window.pageYOffset);
+      const i = heightToScroll / duration;
+      let x = i;
+      const int = setInterval(() => {
+        const screenBottom = window.pageYOffset + window.innerHeight;
+        const screenHeight = document.body.scrollHeight;
+        const scrollToNum =
+          window.pageYOffset < scrollDest
+            ? x + window.pageYOffset > scrollDest
+              ? scrollDest
+              : x + window.pageYOffset
+            : window.pageYOffset - x < scrollDest
+              ? scrollDest
+              : window.pageYOffset - x;
+        window.scrollTo(0, scrollToNum);
+        if (window.pageYOffset < scrollDest) {
+          if (
+            window.pageYOffset >= scrollDest ||
+            screenHeight === screenBottom
+          ) {
+            clearInterval(int);
+          }
+        } else {
+          if (window.pageYOffset <= scrollDest || window.pageYOffset === 0) {
+            clearInterval(int);
+          }
+        }
+        x += i;
+      }, 16.7);
     }
   },
-  created () {
-    window.addEventListener('scroll', this.popNav)
+  created() {
+    window.addEventListener("scroll", this.popNav);
   },
-  destroyed () {
-    window.removeEventListener('scroll', this.popNav)
+  destroyed() {
+    window.removeEventListener("scroll", this.popNav);
   }
 };
 </script>

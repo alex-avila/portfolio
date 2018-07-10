@@ -1,9 +1,14 @@
 <template>
     <div id="intro" class="intro utility-wrapper">
             <div class="intro__background"></div>
+            <NavScreen
+              :isActive="isNavScreenOn" 
+              :hideNavScreen="hideNavScreen"
+              :scrollTo="scrollTo"
+            />
             <div class="intro__nav">
                 <span class="intro__nav__logo">Alex Avila</span>
-                <span class="intro__nav__menu"></span>
+                <span class="intro__nav__menu" v-on:click="toggleNavScreen()"></span>
             </div>
             <div class="intro__headline">
                 <span>I'm a full stack developer.</span>
@@ -14,36 +19,31 @@
             </div>
             <div
               class="intro__scroll-btn"
-              v-on:click="scrollDown(250)"
+              v-on:click="scrollTo('projects', 250)"
             ></div>
         </div>
 </template>
 
 <script>
+import NavScreen from './NavScreen'
+
 export default {
   name: "Intro",
+  components: {
+    NavScreen
+  },
+  props: {
+    scrollTo: Function
+  },
+  data: function() {
+    return { isNavScreenOn: false };
+  },
   methods: {
-    // 60 fps scrolldown function
-    scrollDown: function(duration = 200) {
-      const scrollDest = document.getElementById("intro").offsetHeight;
-      const heightToScroll = scrollDest - window.pageYOffset;
-      // this handles how much to scroll per frame depending on the duration
-      const i = heightToScroll / duration;
-      let x = i;
-      const int = setInterval(() => {
-        const screenBottom = window.pageYOffset + window.innerHeight;
-        const screenHeight = document.body.scrollHeight;
-        const scrollToNum =
-          x + window.pageYOffset > scrollDest
-            ? scrollDest
-            : x + window.pageYOffset;
-        window.scrollTo(0, scrollToNum);
-        if (window.pageYOffset >= scrollDest || screenHeight === screenBottom) {
-          clearInterval(int);
-        }
-        x += i;
-        // This is 60 frames per second because 1000 / 60 = 16.666...
-      }, 16.7);
+    toggleNavScreen: function() {
+      this.isNavScreenOn = !this.isNavScreenOn
+    },
+    hideNavScreen: function() {
+      this.isNavScreenOn = false
     }
   }
 };
@@ -88,6 +88,8 @@ export default {
 }
 
 .intro__nav__menu {
+  position: relative;
+  z-index: 4;
   background: url(../assets/menu-icon.svg);
   display: block;
   width: 25px;
