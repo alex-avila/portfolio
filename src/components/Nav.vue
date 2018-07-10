@@ -88,10 +88,10 @@ export default {
   left: 0;
   background: #fcfdff;
   z-index: 1;
+  transition: all 0.25s;
 }
 
 .nav {
-  transition: all 0.25s;
   padding: 0 1.618em;
 }
 
