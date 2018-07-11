@@ -18,7 +18,7 @@
             />
         </div>
         <div class="intro__headline">
-            <span>I'm a full stack developer.</span>
+            <span>Hey, I'm Alex.<br/>Full Stack Engineer and Designer based in Denver, CO.</span>
         </div>
         <div class="intro__skills">
             <h4>Main Skills</h4>
@@ -122,9 +122,9 @@ export default {
 }
 
 .intro__headline {
-  text-align: center;
-  margin: auto;
-  font-size: 38px;
+  text-align: left;
+  margin: auto 0;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.8;
 }
