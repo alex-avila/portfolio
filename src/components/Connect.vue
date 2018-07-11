@@ -89,7 +89,7 @@ export default {
   cursor: pointer;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 650px) {
   .connect__content {
     font-size: 21px;
   }
