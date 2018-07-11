@@ -78,7 +78,9 @@ export default {
           };
     },
     styleHover: function(e) {
-      e.target.style.transform = "scale(1.05)";
+      if (this.isModeSmall) {
+        e.target.style.transform = "scale(1.05)";
+      }
       let elems = [
         ...document.getElementsByClassName("nav__screen__item")
       ].filter(elem => elem !== e.target);
@@ -87,7 +89,9 @@ export default {
       });
     },
     styleLeave: function(e) {
-      e.target.style.transform = "scale(1)";
+      if (this.isModeSmall) {
+        e.target.style.transform = "scale(1)";
+      }
       let elems = [
         ...document.getElementsByClassName("nav__screen__item")
       ].filter(elem => elem !== e.target);
