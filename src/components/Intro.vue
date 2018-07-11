@@ -166,6 +166,7 @@ export default {
 @media screen and (min-width: 500px) {
   .intro__background {
     background: url(../assets/large-bg-alt.svg);
+    background-position: right 50% center;
     background-repeat: no-repeat;
     background-size: cover;
   }
