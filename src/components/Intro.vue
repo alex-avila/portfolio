@@ -131,6 +131,7 @@ export default {
 
 .intro__skills {
   padding: 0 0 60px;
+  font-weight: 500;
 }
 
 .intro__scroll-btn {
