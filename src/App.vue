@@ -144,6 +144,7 @@ h3 {
 }
 
 .connect {
+  padding-top: 3em;
   padding-bottom: 3em;
   line-height: 2;
 }
