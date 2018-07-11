@@ -29,12 +29,12 @@ export default {
   data: function() {
     return {
       isMenuActive: false,
-      isModeSmall: true
     };
   },
   props: {
     isNavOn: Boolean,
-    scrollTo: Function
+    scrollTo: Function,
+    isModeSmall: Boolean
   },
   computed: {
     style() {
@@ -57,25 +57,7 @@ export default {
     },
     collapseMenu: function() {
       return (this.isMenuActive = false);
-    },
-    toggleMode: function() {
-      if (window.innerWidth < 500) {
-        this.isModeSmall = true;
-      } else {
-        this.isModeSmall = false;
-      }
     }
-  },
-  created() {
-    if (window.innerWidth < 500) {
-      this.isModeSmall = true;
-    } else {
-      this.isModeSmall = false;
-    }
-    window.addEventListener("resize", this.toggleMode);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.toggleMode);
   }
 };
 </script>

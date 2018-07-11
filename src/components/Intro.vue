@@ -11,11 +11,11 @@
               v-if="isModeSmall"
             ></span>
             <NavScreen
-          :isActive="isNavScreenOn" 
-          :hideNavScreen="hideNavScreen"
-          :scrollTo="scrollTo"
-          :isModeSmall="isModeSmall"
-        />
+              :isActive="isNavScreenOn" 
+              :hideNavScreen="hideNavScreen"
+              :scrollTo="scrollTo"
+              :isModeSmall="isModeSmall"
+            />
         </div>
         <div class="intro__headline">
             <span>I'm a full stack developer.</span>
@@ -41,12 +41,12 @@ export default {
     NavScreen
   },
   props: {
-    scrollTo: Function
+    scrollTo: Function,
+    isModeSmall: Boolean
   },
   data: function() {
     return {
-      isNavScreenOn: false,
-      isModeSmall: true
+      isNavScreenOn: false
     };
   },
   computed: {
@@ -62,25 +62,7 @@ export default {
     },
     hideNavScreen: function() {
       this.isNavScreenOn = false;
-    },
-    toggleMode: function() {
-      if (window.innerWidth < 500) {
-        this.isModeSmall = true;
-      } else {
-        this.isModeSmall = false;
-      }
     }
-  },
-  created() {
-    if (window.innerWidth < 500) {
-      this.isModeSmall = true;
-    } else {
-      this.isModeSmall = false;
-    }
-    window.addEventListener("resize", this.toggleMode);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.toggleMode);
   }
 };
 </script>

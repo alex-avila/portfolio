@@ -6,7 +6,11 @@
             </div>
             <div class="project__title">{{ title }}</div>
         </a>
-        <div>{{ description }}</div>
+        <div class="project__description">{{ description }}</div>
+        <!-- <div v-if="">
+          <div class="project__title">{{ title }}</div>
+          <div class="project__description">{{ description }}</div>
+        </div> -->
     </div>
 </template>
 
@@ -58,6 +62,10 @@ export default {
   display: block;
   max-width: 100%;
   transition: all 0.25s;
+}
+
+@media screen and (min-width: 500px) {
+  
 }
 </style>
 

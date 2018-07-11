@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Nav :isNavOn="isNavOn" :scrollTo="scrollTo"/>
-    <Intro :scrollTo="scrollTo"/>
+    <Nav :isNavOn="isNavOn" :scrollTo="scrollTo" :isModeSmall="isModeSmall"/>
+    <Intro :scrollTo="scrollTo" :isModeSmall="isModeSmall"/>
     <Projects />
     <Connect />
     <Footer />
@@ -26,7 +26,8 @@ export default {
   },
   data: function() {
     return {
-      isNavOn: false
+      isNavOn: false,
+      isModeSmall: true
     };
   },
   methods: {
@@ -68,12 +69,26 @@ export default {
         }
         x += i;
       }, 16.7);
+    },
+    toggleMode: function() {
+      if (window.innerWidth < 500) {
+        this.isModeSmall = true;
+      } else {
+        this.isModeSmall = false;
+      }
     }
   },
   created() {
+    if (window.innerWidth < 500) {
+      this.isModeSmall = true;
+    } else {
+      this.isModeSmall = false;
+    }
+    window.addEventListener("resize", this.toggleMode);
     window.addEventListener("scroll", this.popNav);
   },
   destroyed() {
+    window.removeEventListener("resize", this.toggleMode);
     window.removeEventListener("scroll", this.popNav);
   }
 };
