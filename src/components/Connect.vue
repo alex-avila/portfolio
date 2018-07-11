@@ -39,7 +39,6 @@ export default {
     background: #256ff73b;
 }
 
-
 .connect {
   padding-top: 3em;
   padding-bottom: 3em;
@@ -88,5 +87,11 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  .connect__content {
+    font-size: 21px;
+  }
 }
 </style>
