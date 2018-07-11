@@ -115,7 +115,7 @@ export default {
   stroke-width: 2px;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 650px) {
   .nav__wrapper {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   }

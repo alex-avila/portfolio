@@ -1,23 +1,23 @@
 <template>
-    <div id="project">
-        <a :href="link" target="_blank" class="project__link">
-            <div class="project__img__container">
-              <img class="project__img" :src="image" :alt="title">
-            </div>
-            <div class="project__title">{{ title }}</div>
-        </a>
+  <div id="project">
+    <a :href="link" target="_blank" class="project__link">
+      <div class="project__img__container">
+        <img class="project__img" :src="image" :alt="title">
+      </div>
+      <div v-if="isModeSmall" class="project__title">{{ title }}</div>
+      <div v-if="!isModeSmall" class="project__info-lg">
+        <div class="project__title">{{ title }}</div>
         <div class="project__description">{{ description }}</div>
-        <!-- <div v-if="">
-          <div class="project__title">{{ title }}</div>
-          <div class="project__description">{{ description }}</div>
-        </div> -->
-    </div>
+      </div>
+    </a>
+    <div v-if="isModeSmall" class="project__description">{{ description }}</div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Project",
-  props: ["title", "description", "image", "link"],
+  props: ["title", "description", "image", "link", "isModeSmall"],
   computed: {
     style() {
       return `background-image: url(${this.image})`;
@@ -37,9 +37,15 @@ export default {
 
 .project__link {
   transition: all 0.25s;
+  position: relative;
 }
 
 .project__link:hover {
+  .project__info-lg {
+    visibility: visible;
+    opacity: 1;
+  }
+
   .project__img__container {
     box-shadow: 0 5px rgba(82, 47, 236, 1);
   }
@@ -52,8 +58,8 @@ export default {
   background-size: cover;
   background-position: center;
   width: 100%;
-  box-shadow: 0 5px rgba(82, 47, 236, 0.55);
   margin: 1.618em 0 1em;
+  box-shadow: 0 5px rgba(82, 47, 236, 0.55);
   transition: all 0.25s;
   overflow: hidden;
 }
@@ -64,8 +70,48 @@ export default {
   transition: all 0.25s;
 }
 
-@media screen and (min-width: 500px) {
-  
+@media screen and (min-width: 650px) {
+  .project__link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.25s;
+    position: relative;
+  }
+
+  .project__img__container {
+    margin: 0;
+  }
+
+  .project__info-lg {
+    position: absolute;
+    background: linear-gradient(
+      10deg,
+      rgba(59, 51, 91, 0.6),
+      rgba(59, 51, 91, 0.8)
+    );
+    color: #fdfaff;
+    display: flex;
+    font-weight: 600;
+    padding: 2em;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s;
+  }
+
+  .project__info-lg .project__title {
+    background: #fdfaffde;
+    border-radius: 3px;
+    padding: 0.1em 0.618em 0;
+    margin: 0.25em;
+  }
 }
 </style>
 

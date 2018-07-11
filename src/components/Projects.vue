@@ -2,13 +2,13 @@
     <div id="projects" class="utility-wrapper projects">
         <h3 class="section-title projects__title">Projects</h3>
         <div class="projects__projects">
-            <Project
+            <Project :isModeSmall="isModeSmall"
                 :image="require('../assets/tic-tac-toe.jpg')"
                 link="https://alex-avila.github.io/tic-tac-toe-world/#/"
                 title="Tic Tac Toe World"
-                description="A.I. that creates an unbeatable tic tac toe game. Displays weather information from an API."
+                description="A.I. that creates an unbeatable tic tac toe game. Displays weather data from an API."
             />
-            <Project
+            <Project :isModeSmall="isModeSmall"
                 :image="require('../assets/memory-game.jpg')"
                 link="https://alex-avila.github.io/memory-game/"
                 title="RPG Memory Game"
@@ -25,6 +25,9 @@ export default {
   name: "Projects",
   components: {
     Project
+  },
+  props: {
+    isModeSmall: Boolean
   }
 };
 </script>

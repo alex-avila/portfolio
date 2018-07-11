@@ -145,7 +145,7 @@ export default {
   padding-bottom: 60px;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 650px) {
   .intro__background {
     background: url(../assets/large-bg-alt.svg);
     background-position: right 50% center;

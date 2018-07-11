@@ -125,7 +125,7 @@ export default {
   transition: all 0.25s;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
   .nav__screen {
     position: relative;
     font-size: 1rem;

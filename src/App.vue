@@ -2,7 +2,7 @@
   <div id="app">
     <Nav :isNavOn="isNavOn" :scrollTo="scrollTo" :isModeSmall="isModeSmall"/>
     <Intro :scrollTo="scrollTo" :isModeSmall="isModeSmall"/>
-    <Projects />
+    <Projects :isModeSmall="isModeSmall"/>
     <Connect />
     <Footer />
   </div>
@@ -71,7 +71,7 @@ export default {
       }, 16.7);
     },
     toggleMode: function() {
-      if (window.innerWidth < 500) {
+      if (window.innerWidth < 650) {
         this.isModeSmall = true;
       } else {
         this.isModeSmall = false;
@@ -79,7 +79,7 @@ export default {
     }
   },
   created() {
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 650) {
       this.isModeSmall = true;
     } else {
       this.isModeSmall = false;

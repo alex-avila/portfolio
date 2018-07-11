@@ -83,7 +83,7 @@ export default {
   transition: all 0.25s;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 650px) {
   .nav__menu {
     position: relative;
     display: flex;
