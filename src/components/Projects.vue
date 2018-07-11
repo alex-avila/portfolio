@@ -3,6 +3,12 @@
         <h3 class="section-title projects__title">Projects</h3>
         <div class="projects__projects">
             <Project :isModeSmall="isModeSmall"
+                :image="require('../assets/re-act-arcade.jpg')"
+                link="https://re-act-arcade.herokuapp.com/"
+                title="(re)act arcade"
+                description="Arcade group project. I contributed on the backend, frontend, UI, and the database structure."
+            />
+            <Project :isModeSmall="isModeSmall"
                 :image="require('../assets/tic-tac-toe.jpg')"
                 link="https://alex-avila.github.io/tic-tac-toe-world/#/"
                 title="Tic Tac Toe World"
@@ -39,6 +45,10 @@ export default {
 .projects__projects
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+
+// @media screen and (min-width: 650px)
+//     .projects__projects
+        // gap: 0;
 </style>
 
