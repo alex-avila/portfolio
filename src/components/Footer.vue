@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">Copyright &copy; 2018 blahblahblah</div>
+    <div class="footer">© 2018 Alex Avila. All rights reserved.</div>
 </template>
 
 <script>
