@@ -47,7 +47,7 @@ export default {
   }
 
   .project__img__container {
-    box-shadow: 0 5px rgba(82, 47, 236, 1);
+    border-bottom: 5px solid rgb(118, 87, 255);
   }
   .project__img {
     transform: scale(1.1);
@@ -59,7 +59,7 @@ export default {
   background-position: center;
   width: 100%;
   margin: 1.618em 0 1em;
-  box-shadow: 0 5px rgba(82, 47, 236, 0.55);
+  border-bottom: 5px solid rgba(82, 47, 236, 0.5);
   transition: all 0.25s;
   overflow: hidden;
 }
