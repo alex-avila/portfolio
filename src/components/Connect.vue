@@ -9,7 +9,7 @@
             <a href="https://github.com/alex-avila" target="_blank">
                 <span class="icon github"></span>
             </a>
-            <a href="https://dribbble.com/Alex_Avila" target="_blank">
+            <a href="https://dribbble.com/alex-avila" target="_blank">
                 <span class="icon dribbble"></span>
             </a>
             <a href="https://www.linkedin.com/in/alex-avilx/" target="_blank">
