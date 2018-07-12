@@ -46,9 +46,5 @@ export default {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-
-// @media screen and (min-width: 650px)
-//     .projects__projects
-        // gap: 0;
 </style>
 
