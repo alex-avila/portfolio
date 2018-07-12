@@ -87,6 +87,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
+  min-height: 600px;
   top: 0;
   right: 0;
   bottom: 0;
