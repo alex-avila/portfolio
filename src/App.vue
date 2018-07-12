@@ -98,6 +98,7 @@ export default {
 html,
 body {
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -126,11 +127,10 @@ a {
 
 html,
 body,
-.wrapper {
-  margin: 0;
+#app {
   font-size: 16px;
-  font-family: "Avenir";
-  height: 100%;
+  font-family: "Avenir", "Helvetica Neue", "Arial", sans-serif;
+  /* height: 100%; */
   background: #fcfdff;
   color: #24195f;
   line-height: 1.618;
