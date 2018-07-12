@@ -28,7 +28,7 @@
 			</a>
 			<a
         class="nav__screen__item"
-        href="https://dribbble.com/Alex_Avila"
+        href="https://dribbble.com/alex-avila"
         target="_blank"
         v-on:mouseover="styleHover"
         v-on:mouseleave="styleLeave"
