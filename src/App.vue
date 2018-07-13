@@ -33,7 +33,7 @@ export default {
   methods: {
     popNav: function() {
       const scrollDest = document.getElementById("intro").offsetHeight;
-      this.isNavOn = window.pageYOffset >= scrollDest;
+      this.isNavOn = window.pageYOffset >= scrollDest - 5;
     },
     scrollTo: function(destination, duration = 200, callback) {
       if (callback) callback();
@@ -55,6 +55,9 @@ export default {
               ? scrollDest
               : window.pageYOffset - x;
         window.scrollTo(0, scrollToNum);
+        if (scrollToNum === scrollDest) {
+          clearInterval(int)
+        }
         if (window.pageYOffset < scrollDest) {
           if (
             window.pageYOffset >= scrollDest ||
