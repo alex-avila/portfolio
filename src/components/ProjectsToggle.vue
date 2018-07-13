@@ -27,6 +27,7 @@ export default {
   overflow: hidden;
   margin: auto;
   font-weight: 500;
+  user-select: none;
   @media screen and (min-width: 650px) {
     margin: 0;
   }
