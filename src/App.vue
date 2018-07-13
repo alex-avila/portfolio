@@ -94,7 +94,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 html,
 body {
   margin: 0;
@@ -147,6 +147,9 @@ h3 {
 
 .section-title {
   color: #202ed5;
+  @media screen and (min-width: 650px) {
+    font-size: 30px;
+  }
 }
 
 .section-title::after {
