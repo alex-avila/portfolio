@@ -2,7 +2,7 @@
     <div id="projects" class="utility-wrapper projects">
         <div class="projects__title-and-toggle">
             <h3 class="section-title projects__title">Projects</h3>
-            <!-- <ProjectsToggle :selectOption="selectOption" :optionSelected="optionSelected"/> -->
+            <ProjectsToggle :selectOption="selectOption" :optionSelected="optionSelected"/>
         </div>
         <div class="projects__projects">
             <slot v-for="project in projects">
