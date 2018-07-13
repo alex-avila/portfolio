@@ -1,7 +1,9 @@
 <template>
   <div id="project">
     <a :href="link" target="_blank" class="project__link">
-      <div class="project__img__container">
+      <div
+        :class="{gallery__img__container: mode === 'ux-design', project__img__container: mode === 'development'}"
+      >
         <img class="project__img" :src="image" :alt="title">
       </div>
       <div v-if="isModeSmall" class="project__title">{{ title }}</div>
@@ -17,7 +19,7 @@
 <script>
 export default {
   name: "Project",
-  props: ["title", "description", "image", "link", "isModeSmall"],
+  props: ["title", "description", "image", "link", "isModeSmall", "mode"],
   computed: {
     style() {
       return `background-image: url(${this.image})`;
@@ -49,6 +51,7 @@ export default {
   .project__img__container {
     border-bottom: 5px solid rgb(118, 87, 255);
   }
+  
   .project__img {
     transform: scale(1.1);
   }
@@ -60,6 +63,15 @@ export default {
   width: 100%;
   margin: 1.618em 0 1em;
   border-bottom: 5px solid rgba(82, 47, 236, 0.5);
+  transition: all 0.25s;
+  overflow: hidden;
+}
+
+.gallery__img__container {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin: 1.618em 0 1em;
   transition: all 0.25s;
   overflow: hidden;
 }
@@ -79,7 +91,8 @@ export default {
     position: relative;
   }
 
-  .project__img__container {
+  .project__img__container,
+  .gallery__img__container {
     margin: 0;
   }
 

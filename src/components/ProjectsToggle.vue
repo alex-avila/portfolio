@@ -4,7 +4,7 @@
             <span>Development</span>
         </div>
         <div id="ux-design" class="toggle__option toggle__option-2" :class="{selected: optionSelected === 1}" v-on:click="selectOption(1)">
-            <span>UX Design</span>
+            <span>UX Gallery</span>
         </div>
     </div>
 </template>
@@ -27,6 +27,7 @@ export default {
   overflow: hidden;
   margin: auto;
   font-weight: 500;
+  user-select: none;
   @media screen and (min-width: 650px) {
     margin: 0;
   }
