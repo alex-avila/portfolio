@@ -47,7 +47,7 @@ export default {
         ...document.getElementsByClassName("nav__menu__item")
       ].filter(elem => elem !== e.target);
       elems.forEach(elem => {
-        elem.style.color = "rgba(44, 62, 80, 0.5)";
+        elem.style.color = "rgba(82, 47, 236, 0.5)";
       });
     },
     styleLeave: function(e) {
@@ -55,7 +55,7 @@ export default {
         ...document.getElementsByClassName("nav__menu__item")
       ].filter(elem => elem !== e.target);
       elems.forEach(elem => {
-        elem.style.color = "rgb(44, 62, 80)";
+        elem.style.color = "rgb(82, 47, 236)";
       });
     }
   }
@@ -75,6 +75,7 @@ export default {
   left: 0;
   z-index: 0;
   transition: all 0.25s;
+  color: rgb(82, 47, 236);
 }
 
 .nav__menu__item {

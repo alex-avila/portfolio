@@ -47,8 +47,8 @@ export default {
     },
     icon() {
       return this.isMenuActive
-        ? { background: `url(${require("../assets/ex-blk.svg")})` }
-        : { background: `url(${require("../assets/menu-icon-blk.svg")})` };
+        ? { background: `url(${require("../assets/ex-purp.svg")})` }
+        : { background: `url(${require("../assets/menu-icon-purp.svg")})` };
     }
   },
   methods: {
@@ -65,6 +65,7 @@ export default {
 <style lang="scss">
 .nav__wrapper {
   position: fixed;
+  color: #532FEC;
   width: 100%;
   top: 0;
   left: 0;
