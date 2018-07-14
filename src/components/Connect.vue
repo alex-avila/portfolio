@@ -2,7 +2,7 @@
     <div id="connect" class="connect utility-wrapper">
         <h3 class="section-title connect__title">Connect</h3>
         <div class="connect__content">
-            <p>Thank you for visiting my portfolio.</p>
+            <p>Thank you for visiting my portfolio<br>written in Vue.</p>
             <p>Contact me at <a class="email-link" href="mailto:alex.avilx@gmail.com">alex.avilx@gmail.com</a>.</p>
         </div>
         <div class="connect__icons">
