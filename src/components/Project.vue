@@ -48,32 +48,35 @@ export default {
     opacity: 1;
   }
 
-  .project__img__container {
-    border-bottom: 5px solid rgb(118, 87, 255);
+  .project__img__container,
+  .gallery__img__container {
+    box-shadow: 0 5px 0 rgb(118, 87, 255);
   }
   
   .project__img {
+    display: block;
+    width: 100%;
     transform: scale(1.1);
   }
 }
 
-.project__img__container {
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  margin: 1.618em 0 1em;
-  border-bottom: 5px solid rgba(82, 47, 236, 0.5);
-  transition: all 0.25s;
-  overflow: hidden;
-}
-
+.project__img__container,
 .gallery__img__container {
   background-size: cover;
   background-position: center;
   width: 100%;
-  margin: 1.618em 0 1em;
+  padding: 0;
+  box-shadow: 0 5px 0 rgba(82, 47, 236, 0.5);
   transition: all 0.25s;
   overflow: hidden;
+}
+
+.project__img__container {
+  margin: 1.25em 0 1em;
+}
+
+.gallery__img__container {
+  margin: 1.25em 0;
 }
 
 .project__img {
@@ -94,6 +97,10 @@ export default {
   .project__img__container,
   .gallery__img__container {
     margin: 0;
+  }
+
+  .gallery__img__container {
+    box-shadow: none !important;
   }
 
   .project__info-lg {
