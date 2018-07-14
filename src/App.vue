@@ -4,7 +4,6 @@
     <Intro :scrollTo="scrollTo" :isModeSmall="isModeSmall"/>
     <Projects :isModeSmall="isModeSmall"/>
     <Connect />
-    <Footer />
   </div>
 </template>
 
@@ -13,7 +12,6 @@ import Nav from "./components/Nav.vue";
 import Intro from "./components/Intro.vue";
 import Projects from "./components/Projects.vue";
 import Connect from "./components/Connect.vue";
-import Footer from "./components/Footer.vue";
 
 export default {
   name: "app",
@@ -21,8 +19,7 @@ export default {
     Nav,
     Intro,
     Projects,
-    Connect,
-    Footer
+    Connect
   },
   data: function() {
     return {
@@ -162,12 +159,5 @@ h3 {
   height: 7px;
   width: 66px;
   margin: -16.75px 0 0 -1px;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  padding: 0 0 3em;
-  font-size: 13px;
 }
 </style>
