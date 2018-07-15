@@ -3,7 +3,7 @@
         <h3 class="section-title connect__title">Connect</h3>
         <div class="connect__content">
             <p>Thank you for visiting my portfolio.<br/>This was written in Vue.</p>
-            <p>Contact me at <a class="email-link" href="mailto:alex.avilx@gmail.com">alex.avilx@gmail.com</a>.</p>
+            <p>Contact me at <a class="email-link" href="mailto:alex.avilx@gmail.com">alex.avilX@gmail.com</a>.</p>
         </div>
         <div class="connect__icons">
             <a href="https://github.com/alex-avila" target="_blank">
