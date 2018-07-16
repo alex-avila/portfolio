@@ -1,0 +1,42 @@
+.nav__menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  left: 0;
+  z-index: 0;
+  transition: all 0.25s;
+  color: rgb(82, 47, 236);
+}
+
+.nav__menu__item {
+  padding: 0 1em 1em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+@media screen and (min-width: 650px) {
+  .nav__menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    background: none;
+    box-shadow: none;
+    width: auto;
+    z-index: 0;
+    transition: all 0.25s;
+  }
+
+  .nav__menu__item {
+    padding: 0 1em 0;
+    cursor: pointer;
+  }
+
+  .nav__menu__item:last-child {
+    padding: 0 0 0 1em;
+  }
+}

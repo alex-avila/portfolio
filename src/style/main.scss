@@ -1,0 +1,62 @@
+@import 'abstracts/variables';
+
+@import 'layout/intro';
+@import 'layout/nav';
+@import 'layout/nav-menu';
+@import 'layout/nav-screen';
+@import 'layout/projects';
+@import 'layout/project';
+@import 'layout/projects-toggle';
+@import 'layout/connect';
+
+* {
+  box-sizing: border-box;
+}
+
+#app,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Avenir", 'Helvetica', Arial, sans-serif;
+  background: $white;
+  color: $black;
+  line-height: 1.618;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.utility-wrapper {
+  padding: 0 1.618em;
+  margin: auto;
+  max-width: 900px;
+}
+
+h4 {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+.section-title {
+  color: $dark-blue;
+  @media screen and (min-width: 650px) {
+    font-size: 30px;
+  }
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  background: $bubble-gum;
+  height: 7px;
+  width: 66px;
+  margin: -16.75px 0 0 -1px;
+}

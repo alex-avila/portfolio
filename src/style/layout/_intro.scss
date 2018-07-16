@@ -1,0 +1,87 @@
+.intro__wrapper {
+  position: relative;
+  min-height: 600px;
+  height: 100vh;
+  z-index: 0;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: #f8eaff;
+}
+
+.intro__background {
+  background: url(assets/main-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  min-height: 600px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.intro__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.618em 0;
+  font-weight: 600;
+}
+
+.intro__nav__logo {
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.intro__nav__menu {
+  position: relative;
+  z-index: 4;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  cursor: pointer;
+}
+
+.intro__headline {
+  text-align: left;
+  margin: auto 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.intro__skills {
+  padding: 0 0 60px;
+  font-weight: 500;
+}
+
+.intro__scroll-btn {
+  background: url(assets/down-arrow.svg);
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  align-self: center;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 650px) {
+  .intro__background {
+    background: url(assets/large-bg-3.svg);
+    background-color: #24195F;
+    background-position: right 50% center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
