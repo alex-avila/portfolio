@@ -17,35 +17,17 @@
         Connect
       </div>
       <a
+        v-for="link in socialLinks"
+        :key="link.link"
         class="nav__screen__item"
-        href="https://github.com/alex-avila"
+        :href="link.link"
         target="_blank"
         v-on:mouseover="styleHover"
         v-on:mouseleave="styleLeave"
         v-if="isModeSmall"
       >
-				GitHub
-			</a>
-			<a
-        class="nav__screen__item"
-        href="https://dribbble.com/alex-avila"
-        target="_blank"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-        v-if="isModeSmall"
-      >
-				Dribbble
-			</a>
-			<a
-        class="nav__screen__item"
-        href="https://www.linkedin.com/in/alex-avilx/"
-        target="_blank"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-        v-if="isModeSmall"
-      >
-				LinkedIn
-			</a>
+        {{link.text}}
+      </a>
     </div>
 </template>
 
@@ -54,7 +36,21 @@ export default {
   name: "NavScreen",
   data: function() {
     return {
-      delay: 250
+      delay: 250,
+      socialLinks: [
+        {
+          link: 'https://github.com/alex-avila',
+          text: 'GitHub'
+        },
+        {
+          link: 'https://dribbble.com/alex-avila',
+          text: 'Dribbble'
+        },
+        {
+          link: 'https://www.linkedin.com/in/alex-avila/',
+          text: 'LinkedIn'
+        },
+      ]
     };
   },
   props: {
