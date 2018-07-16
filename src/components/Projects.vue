@@ -141,29 +141,3 @@ export default {
   }
 };
 </script>
-
-<style lang="sass" scoped>
-#projects
-    padding-top: 3em
-
-.projects__title-and-toggle
-    display: flex
-    flex-direction: column
-    @media screen and (min-width: 650px)
-        flex-direction: row
-        justify-content: space-between
-        align-items: center;
-
-.projects__projects
-    display: grid
-    grid-gap: 15px 10px
-    gap: 15px 10px
-    padding-top: 1em
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
-
-.projects__gallery
-  @media screen and (min-width: 650px)
-    grid-gap: 0
-    gap: 0
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
-</style>
