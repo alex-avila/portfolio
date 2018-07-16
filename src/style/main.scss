@@ -1,5 +1,14 @@
 @import 'abstracts/variables';
 
+@import 'layout/intro';
+@import 'layout/nav';
+@import 'layout/nav-menu';
+@import 'layout/nav-screen';
+@import 'layout/projects';
+@import 'layout/project';
+@import 'layout/projects-toggle';
+@import 'layout/connect';
+
 * {
   box-sizing: border-box;
 }
