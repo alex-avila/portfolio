@@ -87,6 +87,11 @@ export default {
           link: "https://dribbble.com/shots/4432985-Weather-Daily-UI-37"
         },
         {
+          image: require("../assets/ux-gallery/calendar.png"),
+          title: "Calendar App",
+          link: "https://dribbble.com/shots/4838372-Calendar-Daily-UI-38"
+        },
+        {
           image: require("../assets/ux-gallery/contact-form.png"),
           title: "Contact Form",
           link: "https://dribbble.com/shots/4370917-Daily-UI-28-Contact-Us"
