@@ -70,7 +70,7 @@ export default {
         },
         {
           image: require("../assets/projects/memory-game.jpg"),
-          link: "https://alex-avila.github.io/memory-game/",
+          link: "https://alex-avila.github.io/react-memory-game/",
           title: "RPG Memory Game",
           description: "Simple game of concentration in React."
         }
