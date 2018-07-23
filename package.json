@@ -28,8 +28,8 @@
     }
   },
   "lint-staged": {
-    "{./,src}/**/*.{vue,js,json,scss,css,md}": [
-      "prettier --write",
+    "*.{vue,js,json,scss,css,md}": [
+      "yarn run pretty",
       "git add"
     ]
   },
