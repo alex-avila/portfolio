@@ -21,6 +21,6 @@
 
 <script>
 export default {
-  name: "Connect"
-};
+  name: 'Connect'
+}
 </script>

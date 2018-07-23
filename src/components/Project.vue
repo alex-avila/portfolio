@@ -18,12 +18,12 @@
 
 <script>
 export default {
-  name: "Project",
-  props: ["title", "description", "image", "link", "isModeSmall", "mode"],
+  name: 'Project',
+  props: ['title', 'description', 'image', 'link', 'isModeSmall', 'mode'],
   computed: {
     style() {
-      return `background-image: url(${this.image})`;
+      return `background-image: url(${this.image})`
     }
   }
-};
+}
 </script>
