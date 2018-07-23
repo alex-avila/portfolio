@@ -16,7 +16,21 @@
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.0",
+    "prettier": "1.13.7",
     "vue-template-compiler": "^2.5.16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,js,json,scss,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "root": true,
