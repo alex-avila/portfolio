@@ -53,7 +53,7 @@ export default {
               : window.pageYOffset - x;
         window.scrollTo(0, scrollToNum);
         if (scrollToNum === scrollDest) {
-          clearInterval(int)
+          clearInterval(int);
         }
         if (window.pageYOffset < scrollDest) {
           if (
@@ -95,5 +95,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'style/main.scss'
+@import "style/main.scss";
 </style>
