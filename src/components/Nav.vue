@@ -19,17 +19,17 @@
 </template>
 
 <script>
-import NavMenu from "./NavMenu.vue";
+import NavMenu from './NavMenu.vue'
 
 export default {
-  name: "Nav",
+  name: 'Nav',
   components: {
     NavMenu
   },
   data: function() {
     return {
-      isMenuActive: false,
-    };
+      isMenuActive: false
+    }
   },
   props: {
     isNavOn: Boolean,
@@ -39,25 +39,25 @@ export default {
   computed: {
     style() {
       if (!this.isNavOn) {
-        this.collapseMenu();
+        this.collapseMenu()
       }
       return this.isNavOn
-        ? { transform: "translateY(0)" }
-        : { transform: "translateY(-300%)" };
+        ? { transform: 'translateY(0)' }
+        : { transform: 'translateY(-300%)' }
     },
     icon() {
       return this.isMenuActive
-        ? { background: `url(${require("../assets/ex-purp.svg")})` }
-        : { background: `url(${require("../assets/menu-icon-purp.svg")})` };
+        ? { background: `url(${require('../assets/ex-purp.svg')})` }
+        : { background: `url(${require('../assets/menu-icon-purp.svg')})` }
     }
   },
   methods: {
     toggleMenu: function() {
-      return (this.isMenuActive = !this.isMenuActive);
+      return (this.isMenuActive = !this.isMenuActive)
     },
     collapseMenu: function() {
-      return (this.isMenuActive = false);
+      return (this.isMenuActive = false)
     }
   }
-};
+}
 </script>

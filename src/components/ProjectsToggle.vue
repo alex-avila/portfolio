@@ -11,10 +11,10 @@
 
 <script>
 export default {
-  name: "ProjectsToggle",
+  name: 'ProjectsToggle',
   props: {
-      selectOption: Function,
-      optionSelected: Number
+    selectOption: Function,
+    optionSelected: Number
   }
-};
+}
 </script>

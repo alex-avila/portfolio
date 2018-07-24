@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import Nav from "./components/Nav.vue";
-import Intro from "./components/Intro.vue";
-import Projects from "./components/Projects.vue";
-import Connect from "./components/Connect.vue";
+import Nav from './components/Nav.vue'
+import Intro from './components/Intro.vue'
+import Projects from './components/Projects.vue'
+import Connect from './components/Connect.vue'
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     Nav,
     Intro,
@@ -25,24 +25,24 @@ export default {
     return {
       isNavOn: false,
       isModeSmall: true
-    };
+    }
   },
   methods: {
     popNav: function() {
-      const scrollDest = document.getElementById("intro").offsetHeight;
-      this.isNavOn = window.pageYOffset >= scrollDest - 5;
+      const scrollDest = document.getElementById('intro').offsetHeight
+      this.isNavOn = window.pageYOffset >= scrollDest - 5
     },
     scrollTo: function(destination, duration = 200, callback) {
-      if (callback) callback();
+      if (callback) callback()
       const scrollDest = destination
         ? document.getElementById(destination).offsetTop
-        : document.body.offsetTop;
-      const heightToScroll = Math.abs(scrollDest - window.pageYOffset);
-      const i = heightToScroll / duration;
-      let x = i;
+        : document.body.offsetTop
+      const heightToScroll = Math.abs(scrollDest - window.pageYOffset)
+      const i = heightToScroll / duration
+      let x = i
       const int = setInterval(() => {
-        const screenBottom = window.pageYOffset + window.innerHeight;
-        const screenHeight = document.body.scrollHeight;
+        const screenBottom = window.pageYOffset + window.innerHeight
+        const screenHeight = document.body.scrollHeight
         const scrollToNum =
           window.pageYOffset < scrollDest
             ? x + window.pageYOffset > scrollDest
@@ -50,8 +50,8 @@ export default {
               : x + window.pageYOffset
             : window.pageYOffset - x < scrollDest
               ? scrollDest
-              : window.pageYOffset - x;
-        window.scrollTo(0, scrollToNum);
+              : window.pageYOffset - x
+        window.scrollTo(0, scrollToNum)
         if (scrollToNum === scrollDest) {
           clearInterval(int)
         }
@@ -60,40 +60,40 @@ export default {
             window.pageYOffset >= scrollDest ||
             screenHeight === screenBottom
           ) {
-            clearInterval(int);
+            clearInterval(int)
           }
         } else {
           if (window.pageYOffset <= scrollDest || window.pageYOffset === 0) {
-            clearInterval(int);
+            clearInterval(int)
           }
         }
-        x += i;
-      }, 16.7);
+        x += i
+      }, 16.7)
     },
     toggleMode: function() {
       if (window.innerWidth < 650) {
-        this.isModeSmall = true;
+        this.isModeSmall = true
       } else {
-        this.isModeSmall = false;
+        this.isModeSmall = false
       }
     }
   },
   created() {
     if (window.innerWidth < 650) {
-      this.isModeSmall = true;
+      this.isModeSmall = true
     } else {
-      this.isModeSmall = false;
+      this.isModeSmall = false
     }
-    window.addEventListener("resize", this.toggleMode);
-    window.addEventListener("scroll", this.popNav);
+    window.addEventListener('resize', this.toggleMode)
+    window.addEventListener('scroll', this.popNav)
   },
   destroyed() {
-    window.removeEventListener("resize", this.toggleMode);
-    window.removeEventListener("scroll", this.popNav);
+    window.removeEventListener('resize', this.toggleMode)
+    window.removeEventListener('scroll', this.popNav)
   }
-};
+}
 </script>
 
 <style lang="scss">
-@import 'style/main.scss'
+@import 'style/main.scss';
 </style>

@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "NavScreen",
+  name: 'NavScreen',
   data: function() {
     return {
       delay: 250,
@@ -49,9 +49,9 @@ export default {
         {
           link: 'https://www.linkedin.com/in/alex-avila/',
           text: 'LinkedIn'
-        },
+        }
       ]
-    };
+    }
   },
   props: {
     isActive: Boolean,
@@ -61,40 +61,40 @@ export default {
   },
   methods: {
     delayHideNavScreen: function(delay) {
-      setTimeout(this.hideNavScreen, delay);
+      setTimeout(this.hideNavScreen, delay)
     },
     style: function() {
-      document.body.style.overflow = this.isActive ? "hidden" : "auto";
+      document.body.style.overflow = this.isActive ? 'hidden' : 'auto'
       return this.isActive || !this.isModeSmall
         ? {
-            transform: "translateY(0)"
+            transform: 'translateY(0)'
           }
         : {
-            transform: "translateY(-100%)"
-          };
+            transform: 'translateY(-100%)'
+          }
     },
     styleHover: function(e) {
       if (this.isModeSmall) {
-        e.target.style.transform = "scale(1.05)";
+        e.target.style.transform = 'scale(1.05)'
       }
       let elems = [
-        ...document.getElementsByClassName("nav__screen__item")
-      ].filter(elem => elem !== e.target);
+        ...document.getElementsByClassName('nav__screen__item')
+      ].filter(elem => elem !== e.target)
       elems.forEach(elem => {
-        elem.style.color = "rgba(248, 234, 255, 0.5)";
-      });
+        elem.style.color = 'rgba(248, 234, 255, 0.5)'
+      })
     },
     styleLeave: function(e) {
       if (this.isModeSmall) {
-        e.target.style.transform = "scale(1)";
+        e.target.style.transform = 'scale(1)'
       }
       let elems = [
-        ...document.getElementsByClassName("nav__screen__item")
-      ].filter(elem => elem !== e.target);
+        ...document.getElementsByClassName('nav__screen__item')
+      ].filter(elem => elem !== e.target)
       elems.forEach(elem => {
-        elem.style.color = "rgba(248, 234, 255, 1)";
-      });
+        elem.style.color = 'rgba(248, 234, 255, 1)'
+      })
     }
   }
-};
+}
 </script>

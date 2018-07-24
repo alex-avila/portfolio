@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "NavMenu",
+  name: 'NavMenu',
   props: {
     isActive: Boolean,
     collapseMenu: Function,
@@ -34,30 +34,30 @@ export default {
     style() {
       return this.isActive || !this.isModeSmall
         ? {
-            transform: "translateY(0)"
+            transform: 'translateY(0)'
           }
         : {
-            transform: "translateY(-100%)"
-          };
+            transform: 'translateY(-100%)'
+          }
     }
   },
   methods: {
     styleHover: function(e) {
       let elems = [
-        ...document.getElementsByClassName("nav__menu__item")
-      ].filter(elem => elem !== e.target);
+        ...document.getElementsByClassName('nav__menu__item')
+      ].filter(elem => elem !== e.target)
       elems.forEach(elem => {
-        elem.style.color = "rgba(82, 47, 236, 0.5)";
-      });
+        elem.style.color = 'rgba(82, 47, 236, 0.5)'
+      })
     },
     styleLeave: function(e) {
       let elems = [
-        ...document.getElementsByClassName("nav__menu__item")
-      ].filter(elem => elem !== e.target);
+        ...document.getElementsByClassName('nav__menu__item')
+      ].filter(elem => elem !== e.target)
       elems.forEach(elem => {
-        elem.style.color = "rgb(82, 47, 236)";
-      });
+        elem.style.color = 'rgb(82, 47, 236)'
+      })
     }
   }
-};
+}
 </script>

@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import NavScreen from "./NavScreen";
+import NavScreen from './NavScreen'
 
 export default {
-  name: "Intro",
+  name: 'Intro',
   components: {
     NavScreen
   },
@@ -47,22 +47,22 @@ export default {
   data: function() {
     return {
       isNavScreenOn: false
-    };
+    }
   },
   computed: {
     icon() {
       return this.isNavScreenOn
-        ? { background: `url(${require("../assets/ex.svg")})` }
-        : { background: `url(${require("../assets/menu-icon.svg")})` };
+        ? { background: `url(${require('../assets/ex.svg')})` }
+        : { background: `url(${require('../assets/menu-icon.svg')})` }
     }
   },
   methods: {
     toggleNavScreen: function() {
-      this.isNavScreenOn = !this.isNavScreenOn;
+      this.isNavScreenOn = !this.isNavScreenOn
     },
     hideNavScreen: function() {
-      this.isNavScreenOn = false;
+      this.isNavScreenOn = false
     }
   }
-};
+}
 </script>
