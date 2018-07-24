@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "pretty": "prettier --write {./,src}/**/*.{vue,js,json,scss,css,md}",
+    "pretty": "prettier --write src/**/*.{vue,js,json,scss,css,md}",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
