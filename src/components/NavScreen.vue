@@ -1,39 +1,60 @@
 <template>
-    <div class="nav__screen" :style="style()">
-      <div
-        class="nav__screen__item"
-        v-on:click="scrollTo('projects', delay, delayHideNavScreen(delay))"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-      >
-        Projects
-      </div>
-      <div
-        class="nav__screen__item"
-        v-on:click="scrollTo('connect', delay, delayHideNavScreen(delay))"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-      >
-        Connect
-      </div>
+  <div 
+    :style="style()" 
+    class="nav__screen">
+    <div
+      class="nav__screen__item"
+      @click="scrollTo('projects', delay, delayHideNavScreen(delay))"
+      @mouseover="styleHover"
+      @mouseleave="styleLeave"
+    >
+      Projects
+    </div>
+    <div
+      class="nav__screen__item"
+      @click="scrollTo('connect', delay, delayHideNavScreen(delay))"
+      @mouseover="styleHover"
+      @mouseleave="styleLeave"
+    >
+      Connect
+    </div>
+    <template v-if="isModeSmall">
       <a
         v-for="link in socialLinks"
         :key="link.link"
-        class="nav__screen__item"
         :href="link.link"
+        class="nav__screen__item"
         target="_blank"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-        v-if="isModeSmall"
+        @mouseover="styleHover"
+        @mouseleave="styleLeave"
       >
-        {{link.text}}
+        {{ link.text }}
       </a>
-    </div>
+    </template>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'NavScreen',
+  props: {
+    isActive: {
+      type: Boolean,
+      default: false
+    },
+    hideNavScreen: {
+      type: Function,
+      default: null
+    },
+    scrollTo: {
+      type: Function,
+      default: null
+    },
+    isModeSmall: {
+      type: Boolean,
+      default: true
+    }
+  },
   data: function() {
     return {
       delay: 250,
@@ -52,12 +73,6 @@ export default {
         }
       ]
     }
-  },
-  props: {
-    isActive: Boolean,
-    hideNavScreen: Function,
-    scrollTo: Function,
-    isModeSmall: Boolean
   },
   methods: {
     delayHideNavScreen: function(delay) {

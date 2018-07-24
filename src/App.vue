@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <Nav :isNavOn="isNavOn" :scrollTo="scrollTo" :isModeSmall="isModeSmall"/>
-    <Intro :scrollTo="scrollTo" :isModeSmall="isModeSmall"/>
-    <Projects :isModeSmall="isModeSmall"/>
+    <Nav 
+      :isNavOn="isNavOn" 
+      :scrollTo="scrollTo" 
+      :isModeSmall="isModeSmall"/>
+    <Intro 
+      :scroll-to="scrollTo" 
+      :is-mode-small="isModeSmall"/>
+    <Projects :is-mode-small="isModeSmall"/>
     <Connect />
   </div>
 </template>
@@ -14,7 +19,7 @@ import Projects from './components/Projects.vue'
 import Connect from './components/Connect.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Nav,
     Intro,
@@ -26,6 +31,19 @@ export default {
       isNavOn: false,
       isModeSmall: true
     }
+  },
+  created() {
+    if (window.innerWidth < 650) {
+      this.isModeSmall = true
+    } else {
+      this.isModeSmall = false
+    }
+    window.addEventListener('resize', this.toggleMode)
+    window.addEventListener('scroll', this.popNav)
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.toggleMode)
+    window.removeEventListener('scroll', this.popNav)
   },
   methods: {
     popNav: function() {
@@ -77,19 +95,6 @@ export default {
         this.isModeSmall = false
       }
     }
-  },
-  created() {
-    if (window.innerWidth < 650) {
-      this.isModeSmall = true
-    } else {
-      this.isModeSmall = false
-    }
-    window.addEventListener('resize', this.toggleMode)
-    window.addEventListener('scroll', this.popNav)
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.toggleMode)
-    window.removeEventListener('scroll', this.popNav)
   }
 }
 </script>

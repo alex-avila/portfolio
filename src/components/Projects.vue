@@ -1,35 +1,41 @@
 <template>
-    <div id="projects" class="utility-wrapper projects">
-        <div class="projects__title-and-toggle">
-            <h3 class="section-title projects__title">Projects</h3>
-            <ProjectsToggle :selectOption="selectOption" :optionSelected="optionSelected"/>
-        </div>
-        <div class="projects__projects" :class="{projects__gallery: optionSelected === 1}">
-          <template v-if="toggleOptions[optionSelected] === 'development'">
-            <Project
-                :mode="toggleOptions[optionSelected]"
-                v-for="project in projects"
-                :key="project.title"
-                :isModeSmall="isModeSmall"
-                :image="project.image"
-                :link="project.link"
-                :title="project.title"
-                :description="project.description"
-            />
-          </template>
-          <template v-else>
-            <Project
-                :mode="toggleOptions[optionSelected]"
-                v-for="project in uxGallery"
-                :key="project.title"
-                :isModeSmall="isModeSmall"
-                :image="project.image"
-                :link="project.link"
-                :title="project.title"
-            />
-          </template>
-        </div>
+  <div 
+    id="projects" 
+    class="utility-wrapper projects">
+    <div class="projects__title-and-toggle">
+      <h3 class="section-title projects__title">Projects</h3>
+      <ProjectsToggle 
+        :select-option="selectOption" 
+        :option-selected="optionSelected"/>
     </div>
+    <div 
+      :class="{projects__gallery: optionSelected === 1}" 
+      class="projects__projects">
+      <template v-if="toggleOptions[optionSelected] === 'development'">
+        <Project
+          v-for="project in projects"
+          :mode="toggleOptions[optionSelected]"
+          :key="project.title"
+          :is-mode-small="isModeSmall"
+          :image="project.image"
+          :link="project.link"
+          :title="project.title"
+          :description="project.description"
+        />
+      </template>
+      <template v-else>
+        <Project
+          v-for="project in uxGallery"
+          :mode="toggleOptions[optionSelected]"
+          :key="project.title"
+          :is-mode-small="isModeSmall"
+          :image="project.image"
+          :link="project.link"
+          :title="project.title"
+        />
+      </template>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -41,6 +47,12 @@ export default {
   components: {
     Project,
     ProjectsToggle
+  },
+  props: {
+    isModeSmall: {
+      type: Boolean,
+      default: true
+    }
   },
   data: function() {
     return {
@@ -135,9 +147,6 @@ export default {
         }
       ]
     }
-  },
-  props: {
-    isModeSmall: Boolean
   },
   methods: {
     selectOption: function(selection) {
