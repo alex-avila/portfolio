@@ -31,8 +31,8 @@
     }
   },
   "lint-staged": {
-    "*.{vue,js,json,scss,css,md}": [
-      "yarn run pretty",
+    "src/*.{vue,js,json,scss,css,md}": [
+      "yarn run lint",
       "git add"
     ]
   },
