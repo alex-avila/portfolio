@@ -1,34 +1,48 @@
 <template>
-    <div class="nav__menu" :style="style">
-      <div
-        class="nav__menu__item"
-        v-on:click="scrollTo('', 250, collapseMenu())"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-      >Top</div>
-      <div
-        class="nav__menu__item"
-        v-on:click="scrollTo('projects', 250, collapseMenu())"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-      >Projects</div>
-      <div
-        class="nav__menu__item"
-        v-on:click="scrollTo('connect', 250, collapseMenu())"
-        v-on:mouseover="styleHover"
-        v-on:mouseleave="styleLeave"
-      >Connect</div>
-    </div>
+  <div 
+    :style="style" 
+    class="nav__menu">
+    <div
+      class="nav__menu__item"
+      @click="scrollTo('', 250, collapseMenu())"
+      @mouseover="styleHover"
+      @mouseleave="styleLeave"
+    >Top</div>
+    <div
+      class="nav__menu__item"
+      @click="scrollTo('projects', 250, collapseMenu())"
+      @mouseover="styleHover"
+      @mouseleave="styleLeave"
+    >Projects</div>
+    <div
+      class="nav__menu__item"
+      @click="scrollTo('connect', 250, collapseMenu())"
+      @mouseover="styleHover"
+      @mouseleave="styleLeave"
+    >Connect</div>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'NavMenu',
   props: {
-    isActive: Boolean,
-    collapseMenu: Function,
-    scrollTo: Function,
-    isModeSmall: Boolean
+    isActive: {
+      type: Boolean,
+      default: false
+    },
+    collapseMenu: {
+      type: Function,
+      default: null
+    },
+    scrollTo: {
+      type: Function,
+      default: null
+    },
+    isModeSmall: {
+      type: Boolean,
+      default: true
+    }
   },
   computed: {
     style() {

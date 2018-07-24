@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "pretty": "prettier --write {./,src}/**/*.{vue,js,json,scss,css,md}",
+    "pretty": "prettier --write src/**/*.{vue,js,json,scss,css,md}",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -17,6 +17,7 @@
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-standard": "^3.0.0-rc.5",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
     "husky": "^1.0.0-rc.13",
@@ -30,8 +31,8 @@
     }
   },
   "lint-staged": {
-    "*.{vue,js,json,scss,css,md}": [
-      "yarn run pretty",
+    "src/*.{vue,js,json,scss,css,md}": [
+      "yarn run lint",
       "git add"
     ]
   },

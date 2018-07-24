@@ -1,21 +1,27 @@
 <template>
-	<div
-		class="nav__wrapper"
+  <div
     :style="style"
-	>
+    class="nav__wrapper"
+  >
     <div class="nav">
       <div class="nav__logo-and-icon">
-          <span class="nav__logo" v-on:click="scrollTo('', 250)">Alex Avila</span>
-          <div class="menu-icon-wrapper" v-on:click="toggleMenu()" :style="icon" v-if="isModeSmall"></div>
+        <span 
+          class="nav__logo" 
+          @click="scrollTo('', 250)">Alex Avila</span>
+        <div 
+          v-if="isModeSmall" 
+          :style="icon" 
+          class="menu-icon-wrapper" 
+          @click="toggleMenu()"/>
       </div>
       <NavMenu
-        :isActive="isMenuActive"
-        :collapseMenu="collapseMenu"
-        :scrollTo="scrollTo"
-        :isModeSmall="isModeSmall"
+        :is-active="isMenuActive"
+        :collapse-menu="collapseMenu"
+        :scroll-to="scrollTo"
+        :is-mode-small="isModeSmall"
       />
     </div>
-	</div>
+  </div>
 </template>
 
 <script>
@@ -26,15 +32,24 @@ export default {
   components: {
     NavMenu
   },
+  props: {
+    isNavOn: {
+      type: Boolean,
+      default: false
+    },
+    scrollTo: {
+      type: Function,
+      default: null
+    },
+    isModeSmall: {
+      type: Boolean,
+      default: true
+    }
+  },
   data: function() {
     return {
       isMenuActive: false
     }
-  },
-  props: {
-    isNavOn: Boolean,
-    scrollTo: Function,
-    isModeSmall: Boolean
   },
   computed: {
     style() {
