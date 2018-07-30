@@ -13,7 +13,7 @@
       <a 
         href="https://github.com/alex-avila" 
         target="_blank"
-        rel="noreferrer"
+        rel="noopener"
         style="font-size: 0"
       >
         GitHub
@@ -22,7 +22,7 @@
       <a 
         href="https://dribbble.com/alex-avila" 
         target="_blank"
-        rel="noreferrer"
+        rel="noopener"
         style="font-size: 0"
       >
         Dribble
@@ -31,7 +31,7 @@
       <a 
         href="https://www.linkedin.com/in/alex-avilx/" 
         target="_blank"
-        rel="noreferrer"
+        rel="noopener"
         style="font-size: 0"
       >
         LinkedIn
