@@ -25,6 +25,7 @@
         :href="link.link"
         class="nav__screen__item"
         target="_blank"
+        rel="noreferrer"
         @mouseover="styleHover"
         @mouseleave="styleLeave"
       >

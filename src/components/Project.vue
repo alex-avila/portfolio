@@ -1,8 +1,9 @@
 <template>
-  <div id="project">
+  <div class="project">
     <a 
       :href="link" 
-      target="_blank" 
+      target="_blank"
+      rel="noreferrer"
       class="project__link">
       <div
         :class="{gallery__img__container: mode === 'ux-design', project__img__container: mode === 'development'}"
