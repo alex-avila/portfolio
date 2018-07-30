@@ -12,17 +12,29 @@
     <div class="connect__icons">
       <a 
         href="https://github.com/alex-avila" 
-        target="_blank">
+        target="_blank"
+        rel="noreferrer"
+        style="font-size: 0"
+      >
+        GitHub
         <span class="icon github"/>
       </a>
       <a 
         href="https://dribbble.com/alex-avila" 
-        target="_blank">
+        target="_blank"
+        rel="noreferrer"
+        style="font-size: 0"
+      >
+        Dribble
         <span class="icon dribbble"/>
       </a>
       <a 
         href="https://www.linkedin.com/in/alex-avilx/" 
-        target="_blank">
+        target="_blank"
+        rel="noreferrer"
+        style="font-size: 0"
+      >
+        LinkedIn
         <span class="icon linkedin"/>
       </a>
     </div>
