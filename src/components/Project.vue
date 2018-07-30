@@ -3,7 +3,7 @@
     <a 
       :href="link" 
       target="_blank"
-      rel="noreferrer"
+      rel="noopener"
       class="project__link">
       <div
         :class="{gallery__img__container: mode === 'ux-design', project__img__container: mode === 'development'}"
