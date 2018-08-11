@@ -20,7 +20,7 @@
         v-if="!isModeSmall" 
         class="project__info-lg">
         <div class="project__title">{{ title }}</div>
-        <div class="project__description">{{ description }}</div>
+        <div v-if="mode === 'development'" class="project__description">{{ description }}</div>
       </div>
     </a>
     <div 
