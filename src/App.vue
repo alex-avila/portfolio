@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <Nav 
-      :isNavOn="isNavOn" 
-      :scrollTo="scrollTo" 
-      :isModeSmall="isModeSmall"/>
+      :is-nav-on="isNavOn" 
+      :scroll-to="scrollTo" 
+      :is-mode-small="isModeSmall"/>
     <Intro 
       :scroll-to="scrollTo" 
       :is-mode-small="isModeSmall"/>

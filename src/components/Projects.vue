@@ -60,12 +60,6 @@ export default {
       optionSelected: 0,
       projects: [
         {
-          image: require('../assets/projects/myagent-io.jpg'),
-          link: 'https://myagent.io',
-          title: 'MyAgent.io',
-          description: 'A service that helps users find real estate agents.'
-        },
-        {
           image: require('../assets/projects/re-act-arcade.jpg'),
           link: 'https://re-act-arcade.herokuapp.com/',
           title: '(re)act arcade',
