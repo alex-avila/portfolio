@@ -7,7 +7,7 @@
       <p>Thank you for visiting my portfolio.<br>This was written in Vue.</p>
       <p>Contact me at <a 
         class="email-link" 
-        href="mailto:alex.avila.09@outlook.com">alex.avila.09@outlook.com</a>.</p>
+        href="mailto:alex.avilx@gmail.com">alex.avilx@gmail.com</a>.</p>
     </div>
     <div class="connect__icons">
       <a 
