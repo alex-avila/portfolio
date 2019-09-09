@@ -60,6 +60,13 @@ export default {
       optionSelected: 0,
       projects: [
         {
+          image: require('../assets/projects/wario-srs-vue-and-rails-edition.jpg'),
+          link: 'https://wario-srs.herokuapp.com/',
+          title: 'Wario SRS: Vue & Rails Edition',
+          description:
+            'Second iteration of Wario SRS using Vue, Ruby on Rails & PostgreSQL. (Work in progress).'
+        },
+        {
           image: require('../assets/projects/re-act-arcade.jpg'),
           link: 'https://re-act-arcade.herokuapp.com/',
           title: '(re)act arcade',
@@ -67,18 +74,18 @@ export default {
             'Arcade group project. I contributed on the backend, frontend, UI, and the database structure.'
         },
         {
-          image: require('../assets/projects/wario-srs.jpg'),
-          link: 'https://wario-srs.herokuapp.com/',
-          title: 'Wario SRS',
-          description:
-            'Simple personal flashcard app that uses the SuperMemo spaced repetition algorithm. (Work in progress).'
-        },
-        {
           image: require('../assets/projects/tic-tac-toe.jpg'),
           link: 'https://alex-avila.github.io/tic-tac-toe-world/#/',
           title: 'Tic Tac Toe World',
           description:
             'A.I. that creates an unbeatable tic tac toe game. Displays weather data from an API.'
+        },
+        {
+          image: require('../assets/projects/wario-srs.jpg'),
+          link: 'https://wario-srs.herokuapp.com/',
+          title: 'Wario SRS',
+          description:
+            'Simple personal flashcard app that uses the SuperMemo spaced repetition algorithm. (Work in progress). Technologies: React, Express & MongoDB'
         },
         {
           image: require('../assets/projects/memory-game.jpg'),
