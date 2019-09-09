@@ -61,7 +61,7 @@ export default {
       projects: [
         {
           image: require('../assets/projects/wario-srs-vue-and-rails-edition.jpg'),
-          link: 'https://wario-srs.herokuapp.com/',
+          link: 'https://stark-ridge-01842.herokuapp.com/dashboard',
           title: 'Wario SRS: Vue & Rails Edition',
           description:
             'Second iteration of Wario SRS using Vue, Ruby on Rails & PostgreSQL. (Work in progress).'
